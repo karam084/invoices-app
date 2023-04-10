@@ -1,14 +1,42 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Listing Invoices</h1>
-<h2>Amount Company</h2>
-<div id="invoices">
-  <% @invoices.each do |invoice| %>
-    <%= render invoice %>
-    <p>
-      <%= link_to "Show this invoice", invoice %>
-    </p>
-  <% end %>
+<div class="row">
+<div class="col-md-8 col-md-offest-2">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Invoices</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+        <th>Company</th>
+        <th>Contragent</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th colspan="1"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @invoices.each do |invoice| %>
+          <tr>
+          <td><%= invoice.company %></td>
+          <td><%= invoice.contragent %></td>
+          <td><%= invoice.amount %> <%= invoice.currency %></td>
+          <td><%= invoice.date %></td>
+          <td><%= link_to 'Show', invoice %></td>
+          <td><%= link_to 'Edit',edit_invoice_path(invoice) %></td>
+          <td><%= link_to 'Destroy', invoice, method: :delete, data:{ confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="panel-footer">
+    <%= link_to 'New Invoice', new_invoice_path, class: "btn btn-primary" %>
+  </div>
+</div>
+</div>
+  
 </div>
 
-<%= link_to "New invoice", new_invoice_path %>
+
