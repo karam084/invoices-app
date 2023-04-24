@@ -66,7 +66,18 @@ group :development do
   #bootstrap
   gem 'bootstrap', '~> 5.1.1'
 
+  #jquery
+  gem 'jquery-rails'
 
+  # simple form
+  gem 'simple_form'
+ 
+  # Use sqlite3 as the database for Active Record
+  gem "sqlite3", "~> 1.4"
+
+  # themify icons
+  gem 'themify-icons-rails' , github: 'scratch-soft/themify-icons-rails'
+          
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

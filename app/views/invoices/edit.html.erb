@@ -1,10 +1,18 @@
 <h1>Editing invoice</h1>
 
-<%= render "form", invoice: @invoice %>
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">New Invoice</h3>
+      </div>
+		    <div class="panel-body">
+        <%= render "form", invoice: @invoice %>
+		    </div>
+        <div class="panel-heading">
+        <%= link_to 'Back', invoices_path, class: "btn btn-danger" %>
+      </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this invoice", @invoice %> |
-  <%= link_to "Back to invoices", invoices_path %>
+		</div>
+	</div>
 </div>
