@@ -50,3 +50,4 @@ function bind2(main, modal) {
     modal.empty();
     modal.append(" " + n);
 }
+

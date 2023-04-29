@@ -1,3 +1,17 @@
+<! DOCTYPE html>
+<html>
+<head>
+    <!-- ... -->
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/22.2.5/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/22.2.5/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/22.2.5/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/22.2.5/js/dx.viz.js"></script> -->
+</head>
+<body class="dx-viewport">
 <div class="col-xs-12">
 <%= simple_form_for(@invoice) do |f| %>
   <div id="invoice-wrap">
@@ -8,44 +22,44 @@
       </div><!-- /.col -->
     </div>
 
-    <div class="row invoice-info">
+    <div class="row invoice-info ">
       <div class="col-xs-4 invoice-col">
         E-Name
         <address>
-          <%= f.input_field :company, class: "form-control", id: "1" %>
-          <input class="form-control" id= "2"  placeholder="address line 1" />
-          <input class="form-control" id= "4"  placeholder="phone number" />
+          <%= f.input_field :company, class: "form-control dx-texteditor.dx-invalid", id: "1" %>
+          <input class="form-control highlight dx-texteditor.dx-invalid" id= "2"  placeholder="address line 1" />
+          <input class="form-control highlight dx-texteditor.dx-invalid" id= "4"  placeholder="phone number" />
         </address>
       </div><!-- /.col -->
       <div class="col-xs-4 invoice-col">
         Arabic Name
         <address>
-          <%= f.input_field :contragent, class: "form-control", id: "5" %>
+          <%= f.input_field :contragent, class: "form-control highlight dx-texteditor.dx-invalid", id: "5" %>
     
         </address>
       </div><!-- /.col -->
-      <div class="col-xs-4 invoice-col">
-        <form class="form-horizontal">
+      <div class="col-xs-4 invoice-col dx-theme-generic-typography">
+        <form class="form-horizontal dx-theme-generic-typography highlight">
 
-          <div class="form-group">
+          <div class="form-group FirstName">
             <div class="col-xs-4"><label>Invoice #</label></div>
             <div class="col-xs-8 invoice_num"><span id="invoice_number"><%= (Invoice.last.present? ? (Invoice.last.id + 1) : 1) %></span></div>
           </div>
           <div class="col-xs-12"></div>
-          <div class="form-group">
+          <div class="form-group FirstName">
             <div class="col-xs-4"><%= f.label :date, required: false %></div>
             <div class="col-xs-8"><%= f.input_field :date, class: "form-control datepicker", as: :string, id: "invoice_date" %></div>
           </div>
 
           <div class="col-xs-12"></div>
-          <div class="form-group">
+          <div class="form-group FirstName">
             <div class="col-xs-4"><%= f.label :currency, required: false %></div>
             <div class="col-xs-8"><%= f.input_field :currency, id:"invoice_currency", class: "form-control" %></div>
           </div>
 
 
           <div class="col-xs-12"></div>
-          <div class="form-group">
+          <div class="form-group FirstName">
             <div class="col-xs-5 invoice_space"><label>Amount due</label></div>
             <div class="col-xs-7 invoice_space bold" style="text-align:right; padding-top:7px"><span class="due">0.00</span><span class="subtotal_currency"></span></div>
           </div>
@@ -54,7 +68,7 @@
     </div><!-- /.row -->
 
     <div class="row">
-      <div class="col-xs-12 table-responsive">
+      <div class="col-xs-12 table-responsive" id="form-demo">
         <hr>
         <table class="table table-hover" id="items">
       
@@ -136,3 +150,5 @@
 </div>
   </div>
 </div>
+</body>
+</html>
