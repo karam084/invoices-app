@@ -78,6 +78,10 @@ group :development do
   # themify icons
   gem 'themify-icons-rails' , github: 'scratch-soft/themify-icons-rails'
 
+  #rupocop
+  gem 'rubocop', '~> 1.21', require: false
+  gem 'rubocop-rails'
+
   # rails api
   gem 'rally_api', '~> 1.2', '>= 1.2.1'
           
